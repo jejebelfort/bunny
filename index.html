@@ -43,7 +43,7 @@
     .card {
       width: min(720px, 92vw);
       padding: 26px 22px;
-      background: var(--card);
+      background: #f5e6d3cc;  /* Beige with transparency */
       backdrop-filter: blur(10px);
       border-radius: 22px;
       text-align: center;
@@ -134,44 +134,106 @@
 
   <main class="card">
     <!-- ANIMAL WITH HEART -->
-    <svg class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="fur" x1="0" x2="1">
-          <stop offset="0" stop-color="#f7c7a1"/>
-          <stop offset="1" stop-color="#f2a97b"/>
-        </linearGradient>
-        <linearGradient id="heart" x1="0" x2="1">
-          <stop offset="0" stop-color="#ff4d7d"/>
-          <stop offset="1" stop-color="#ff1f68"/>
-        </linearGradient>
-      </defs>
+    <!-- BUNNY HUGGING TEDDY WITH HEART -->
+	<svg class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+	  <defs>
+		<linearGradient id="bunnyFur" x1="0" x2="1">
+		  <stop offset="0" stop-color="#f5f5f5"/>
+		  <stop offset="1" stop-color="#e8e8e8"/>
+		</linearGradient>
+		<linearGradient id="teddyFur" x1="0" x2="1">
+		  <stop offset="0" stop-color="#d4a574"/>
+		  <stop offset="1" stop-color="#b8935f"/>
+		</linearGradient>
+		<linearGradient id="heart" x1="0" x2="1">
+		  <stop offset="0" stop-color="#ff4d7d"/>
+		  <stop offset="1" stop-color="#ff1f68"/>
+		</linearGradient>
+	  </defs>
 
-      <path d="M250 50 C250 33 270 25 282 38
-               C294 25 314 33 314 50
-               C314 78 282 92 282 106
-               C282 92 250 78 250 50Z"
-            fill="url(#heart)"/>
+	  <!-- BUNNY (LEFT) -->
+	  <!-- Bunny body with stroke -->
+	  <ellipse cx="110" cy="140" rx="45" ry="55" fill="url(#bunnyFur)" stroke="#ccc" stroke-width="1"/>
+	  <!-- Bunny head with stroke -->
+	  <circle cx="110" cy="100" r="35" fill="url(#bunnyFur)" stroke="#ccc" stroke-width="1"/>
+	  <!-- Bunny ears -->
+	  <ellipse cx="95" cy="65" rx="10" ry="28" fill="url(#bunnyFur)"/>
+	  <ellipse cx="125" cy="65" rx="10" ry="28" fill="url(#bunnyFur)"/>
+	  <!-- Inner ears -->
+	  <ellipse cx="95" cy="70" rx="6" ry="18" fill="#ffb3d9"/>
+	  <ellipse cx="125" cy="70" rx="6" ry="18" fill="#ffb3d9"/>
+	  <!-- Bunny eyes -->
+	  <circle cx="100" cy="95" r="5" fill="#333"/>
+	  <circle cx="120" cy="95" r="5" fill="#333"/>
+	  <!-- Bunny nose -->
+	  <circle cx="110" cy="105" r="4" fill="#ffb3d9"/>
+	  <!-- Bunny arm hugging (with stroke) -->
+	  <ellipse cx="140" cy="130" rx="15" ry="8" fill="url(#bunnyFur)" 
+         stroke="#999" stroke-width="2" transform="rotate(25 140 130)"/>
 
-      <path d="M90 120 C90 70 140 40 190 60
-               C240 40 290 70 290 120
-               C290 180 240 210 190 210
-               C140 210 90 180 90 120Z"
-            fill="url(#fur)"/>
+	  <!-- TEDDY BEAR (RIGHT) -->
+	  <!-- Teddy body -->
+	  <ellipse cx="210" cy="140" rx="45" ry="55" fill="url(#teddyFur)"/>
+	  <!-- Teddy head -->
+	  <circle cx="210" cy="100" r="35" fill="url(#teddyFur)"/>
+	  <!-- Teddy ears -->
+	  <circle cx="190" cy="75" r="12" fill="url(#teddyFur)"/>
+	  <circle cx="230" cy="75" r="12" fill="url(#teddyFur)"/>
+	  <!-- Inner ears -->
+	  <circle cx="190" cy="75" r="7" fill="#a67c52"/>
+	  <circle cx="230" cy="75" r="7" fill="#a67c52"/>
+	  <!-- Teddy snout -->
+	  <ellipse cx="210" cy="108" rx="18" ry="14" fill="#c9a070"/>
+	  <!-- Teddy eyes -->
+	  <circle cx="200" cy="95" r="4" fill="#333"/>
+	  <circle cx="220" cy="95" r="4" fill="#333"/>
+	  <!-- Teddy nose -->
+	  <circle cx="210" cy="110" r="4" fill="#333"/>
+	  <!-- Teddy arm hugging (with stroke) -->
+	  <ellipse cx="180" cy="130" rx="15" ry="8" fill="url(#teddyFur)" 
+         stroke="#8b6f47" stroke-width="2" transform="rotate(-25 180 130)"/>
+		 
+		 
+	  <!-- Teddy's other arm (holding rose) -->
+		<ellipse cx="235" cy="130" rx="15" ry="8" fill="url(#teddyFur)" 
+				 stroke="#8b6f47" stroke-width="2" transform="rotate(25 235 130)"/>
 
-      <path d="M110 92 L95 55 L140 78 Z" fill="#f2a97b"/>
-      <path d="M270 92 L285 55 L240 78 Z" fill="#f2a97b"/>
+		<!-- ROSE -->
+		<!-- Stem -->
+		<line x1="250" y1="130" x2="250" y2="90" stroke="#2d5016" stroke-width="3"/>
+		<!-- Leaf 1 -->
+		<ellipse cx="248" cy="110" rx="6" ry="10" fill="#4a7c2c" transform="rotate(-30 248 110)"/>
+		<!-- Leaf 2 -->
+		<ellipse cx="252" cy="105" rx="6" ry="10" fill="#4a7c2c" transform="rotate(30 252 105)"/>
+		<!-- Rose petals (outer) -->
+		<circle cx="250" cy="85" r="8" fill="#ff1f68" opacity="0.8"/>
+		<!-- Rose petals (middle) -->
+		<circle cx="248" cy="83" r="6" fill="#ff4d7d"/>
+		<circle cx="252" cy="83" r="6" fill="#ff4d7d"/>
+		<!-- Rose center -->
+		<circle cx="250" cy="82" r="4" fill="#ff6b9d"/>
+		
+	  <!-- HEART IN THE MIDDLE -->
+		<path d="M155 95 C155 85 162 80 168 85
+				 C174 80 181 85 181 95
+				 C181 110 168 120 168 125
+				 C168 120 155 110 155 95Z"
+			  fill="url(#heart)">
+		  <animate attributeName="transform" 
+				   type="scale" 
+				   values="1; 1.1; 1" 
+				   dur="1s" 
+				   repeatCount="indefinite"
+				   additive="sum"
+				   calcMode="spline"
+				   keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+		</path>
 
-      <circle cx="160" cy="130" r="8"/>
-      <circle cx="220" cy="130" r="8"/>
+		<!-- Heart shine effect -->
+		<ellipse cx="163" cy="92" rx="3" ry="5" fill="rgba(255,255,255,0.5)"/>
+	</svg>
 
-      <path d="M190 144 C186 144 182 148 182 152
-               C182 160 190 164 190 170
-               C190 164 198 160 198 152
-               C198 148 194 144 190 144Z"
-            fill="#ff7aa2"/>
-    </svg>
-
-    <h1>Auntie Bunny... Will you be my Valentine?</h1>
+    <h1>Auntie Bunny 🐰... <br> Will you be my Valentine? 🥹</h1>
 
     <section class="button-zone" id="zone">
       <button id="yesBtn">Yes</button>
@@ -179,13 +241,13 @@
     </section>
 
     <!-- HINT -->
-    <div class="hint" id="hint">“No” seems a bit shy 😈</div>
+    <div class="hint" id="hint">Please choose wisely Auntie!!! 😈</div>
 
     <section class="result" id="result">
       <h2>YAY! 🎉</h2>
       <img
         class="fireworks"
-        src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
+		src="https://i.imgur.com/BL4X8K9.png"
         alt="Fireworks"
       />
     </section>
